@@ -8,5 +8,5 @@
  * Controller of the spawncampingShameApp
  */
 angular.module('spawncampingShameApp')
-  .controller('MainCtrl', ['$scope', function($scope){  	
+  .controller('MainCtrl', [function(){  	
   }]);

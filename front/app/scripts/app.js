@@ -17,8 +17,19 @@ angular
 	    'ngTouch',
 		'ui.router'
   	])
+    .constant('API', (function () {
+        var toUrl=function(url){
+            return 'http://localhost:3000'+url;
+        };
+        return {
+            primaries: toUrl('/api/primarys'),
+        };
+    }()))
   	.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',
     	function ($stateProvider, $urlRouterProvider, $httpProvider) {
+
+            $httpProvider.defaults.useXDomain = true;
+
     		$stateProvider
                 .state('anon', {
                     abstract: true,
@@ -27,11 +38,17 @@ angular
                         access: '*'
                     }
                 })
-                .state('anon.register', {
+                .state('landing', {
                     url: '/landing',
                     templateUrl: 'views/landing.html',
                     controller: 'LandingCtrl'
-                });
+                })
+                .state('primaries', {
+                    url: '/primaries',
+                    templateUrl: 'views/primaries.html',
+                    controller: 'PrimaryCtrl'
+                })
+                ;
             $urlRouterProvider.otherwise('/landing', 'views/landing');
 		}
 	]);
