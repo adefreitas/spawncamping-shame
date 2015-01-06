@@ -1,16 +1,9 @@
 {
-  "name": "spawncamping-shame",
+  "name": "back",
   "version": "0.0.1",
-  "description": "Sample Description",
-  "private": true,
-  "dependencies": {
-    "jquery": "latest"
-  },
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "components"
   ]
 }
