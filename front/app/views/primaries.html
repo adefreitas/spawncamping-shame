@@ -6,6 +6,30 @@
     		<div class="row">
                 <div class="col-xs-12">
 			    	<h3 class="text-warning">{{primary.name}}</h3>
+			    	<p class="text-warning"> Description: {{primary.desc}} </p>
+			    	<p class="text-warning"> Type: {{primary.type}} </p>
+			    	<p class="text-warning"> Special: {{primary.special}} </p>
+			    	<p class="text-warning"> Cost: {{primary.cost | currency}} </p>
+			    	<p class="text-warning"> Award: {{primary.award | currency}} </p>
+			    	<p class="text-warning"> Firerate: {{primary.firerate}} </p>
+			    	<p class="text-warning"> Accuracy:</p>
+			    	<div class="progress progress-striped">
+		                <div class="progress-bar progress-bar-info" style="width: {{primary.accuracy}}%;"></div>
+		            </div>
+			    	<p class="text-warning"> Ammo: {{primary.ammo}} / {{primary.magazine}} </p>
+			    	<p class="text-warning"> Armor Penetration:</p>
+			    	<div class="progress progress-striped">
+		                <div class="progress-bar progress-bar-warning" style="width: {{primary.armor}}%;"></div>
+		            </div>
+			    	<p class="text-warning"> Range:</p>
+			    	<div class="progress progress-striped">
+		                <div class="progress-bar progress-bar-success" style="width: {{primary.range}}%;"></div>
+		            </div>
+			    	<p class="text-warning"> Damage:</p>
+			    	<div class="progress progress-striped">
+		                <div class="progress-bar progress-bar-danger" style="width: {{primary.dmg}}%;"></div>
+		            </div>
+			    	<p class="text-warning"> Available for: </p>
 			    	<p class="text-warning" ng-repeat="team in primary.team"> {{team.name}}</p>
 			    	<button class="btn btn-default" type="button" data="primary._id" ng-click="editPrimary(primary._id)">Edit</button>
 			    	<button class="btn btn-danger" type="button" data="primary._id" ng-click="deletePrimary(primary._id)">Delete</button>
