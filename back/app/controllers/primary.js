@@ -9,10 +9,11 @@ module.exports = function(app) {
     Primary.find(function(err, primarys) {
       if (err) {
         res.json(500, err);
-      } else {    
+      } else {
         res.json({primarys: primarys});
       }
-    });
+    })
+    .populate('team');;
   };
 
   // GET

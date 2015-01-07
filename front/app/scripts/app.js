@@ -23,6 +23,8 @@ angular
         };
         return {
             primaries: toUrl('/api/primarys'),
+            primary: toUrl('/api/primary'),
+            primaryID: toUrl('/api/primary/:id'),
             teams: toUrl('/api/teams'),
             team: toUrl('/api/team'),
             teamID: toUrl('/api/team/:id')
