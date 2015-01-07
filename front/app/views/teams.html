@@ -1,0 +1,27 @@
+<div class="row" ng-hide="add">
+  <div class="col-xs-12 well">
+    <h1 class="text-warning text-center">Teams</h1>
+    <ul class="list-unstyled">
+    	<li ng-repeat="team in teams">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a class="text-warning">{{team.name}}</a>
+                    <button class="btn btn-danger pull-right" type="button" data="team._id" ng-click="deleteTeam(team._id)">Delete</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <button class="btn btn-info pull-right" type="button" ng-click="addTeam()">Add new</button>
+  </div>
+</div>
+<div class="row" ng-show="add">
+	<div class="col-xs-12 well">
+    	<h1 class="text-warning text-center">Add Team</h1>
+    	<form>
+    		<div class="form-group">
+    			<input type="text" class="form-control" ng-model="team.name" placeholder="Name">
+    		</div>
+            <button class="btn btn-success btn-block pull-right" type="button" ng-click="saveTeam()">Add</button>
+    	</form>
+    </div>
+</div>

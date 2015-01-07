@@ -5,7 +5,10 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var fields = {
- 
+	name:		{type: String},
+	desc:		{type: String},
+	cost:		{type: Number},
+	dmg:		{type: Number}
 };
 
 var grenadesSchema = new Schema(fields);

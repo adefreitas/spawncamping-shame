@@ -23,6 +23,9 @@ angular
         };
         return {
             primaries: toUrl('/api/primarys'),
+            teams: toUrl('/api/teams'),
+            team: toUrl('/api/team'),
+            teamID: toUrl('/api/team/:id')
         };
     }()))
   	.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',
@@ -42,6 +45,11 @@ angular
                     url: '/landing',
                     templateUrl: 'views/landing.html',
                     controller: 'LandingCtrl'
+                })
+                .state('teams', {
+                    url:'/teams',
+                    templateUrl: 'views/teams.html',
+                    controller: 'TeamsCtrl'
                 })
                 .state('primaries', {
                     url: '/primaries',
