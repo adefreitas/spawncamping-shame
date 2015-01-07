@@ -1,1 +1,61 @@
-<p>This is the secondaries view.</p>
+<div class="row" ng-hide="add">
+  <div class="col-xs-12">
+    <h1 class="text-warning text-center">Secondaries</h1>
+    <ul class="list-unstyled">
+    	<li ng-repeat="secondary in secondaries"><a class="text-warning">{{secondary.name}}</a></li>
+    </ul>
+    <button class="btn btn-info btn-block pull-right" type="button" ng-click="addSecondary()">Add new</button>
+  </div>
+</div>
+<div class="row" ng-show="add">
+	<div class="col-xs-12">
+    	<h1 class="text-warning text-center">Add Secondary</h1>
+    	<form>
+    		<div class="form-group">
+    			<input type="text" class="form-control" ng-model="primary.name" placeholder="Name">
+    		</div>
+    		<div class="form-group">
+    			<input type="text" class="form-control" ng-model="primary.special" placeholder="Special">
+    		</div>
+    		<div class="form-group">
+    			<input type="text" class="form-control" ng-model="primary.desc" placeholder="Description">
+    		</div>
+    		<div class="form-group">
+    			<input type="text" class="form-control" ng-model="primary.type" placeholder="Type">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.cost" placeholder="Cost">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.award" placeholder="Award">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.accuracy" placeholder="Accuracy">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.movement" placeholder="Movement">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.armor" placeholder="Armor">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.ammo" placeholder="Ammo">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.magazine" placeholder="Magazine">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.range" placeholder="Range">
+    		</div>
+    		<div class="form-group">
+    			<input type="number" class="form-control" ng-model="primary.dmg" placeholder="Damage">
+    		</div>
+    		<div class="form-group">
+    			<select class="form-control" ng-model="primary.team" ng-options="team.name for team in teams track by team._id">
+    				<option value="">Team</option>
+    			</select>
+    		</div>
+    		<button class="btn btn-success btn-block pull-right" type="button" ng-click="saveSecondary()">Add</button>
+    	</form>
+    </div>
+</div>

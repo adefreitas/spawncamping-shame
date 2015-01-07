@@ -8,15 +8,27 @@
  * Controller of the spawncampingShameApp
  */
 angular.module('spawncampingShameApp')
-  	.controller('PrimaryCtrl', [ '$scope', 'PrimaryResource', function($scope, Primary){  	
+  	.controller('PrimaryCtrl', [ '$scope', 'PrimaryResource', 'TeamResource', function($scope, Primary, Team){  	
   		$scope.add = false;
+
+       $scope.refreshTeams = function(){
+          Team.query(
+          function(data){
+            console.log(data);
+            $scope.teams = data.teams;
+          }
+        );
+      };
+
+      $scope.refreshTeams();
+
   		Primary.get(
   			function(data){
   				$scope.primaries = data;
   			}
-		);
+		  );
 
-		$scope.addPrimary = function(){
-			$scope.add = true;
-		}
+		  $scope.addPrimary = function(){
+			 $scope.add = true;
+		  };
   }]);

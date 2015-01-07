@@ -1,5 +1,5 @@
 <div class="row" ng-hide="add">
-  <div class="col-xs-12 well">
+  <div class="col-xs-12">
     <h1 class="text-warning text-center">Primaries</h1>
     <ul class="list-unstyled">
     	<li ng-repeat="primary in primaries"><a class="text-warning">{{primary.name}}</a></li>
@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="row" ng-show="add">
-	<div class="col-xs-12 well">
+	<div class="col-xs-12">
     	<h1 class="text-warning text-center">Add Primary</h1>
     	<form>
     		<div class="form-group">
@@ -55,7 +55,7 @@
     				<option value="">Team</option>
     			</select>
     		</div>
-    		<button class="btn btn-success btn-block pull-right" type="button" ng-click="addPrimary()">Add</button>
+    		<button class="btn btn-success btn-block pull-right" type="button" ng-click="savePrimary()">Add</button>
     	</form>
     </div>
 </div>

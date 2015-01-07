@@ -18,15 +18,17 @@ angular.module('spawncampingShameApp')
             $scope.teams = data.teams;
           }
         );
-      }
+      };
+
       $scope.refreshTeams();
+
   		$scope.addTeam = function(){
   			$scope.add = true;
-  		}
+  		};
 
       $scope.saveTeam = function(){
-        var team = new Team($scope)
-        team.$save(function(team){
+        var team = new Team($scope);
+        team.$save(function(){
           console.log('SUCCESS!!');
           $scope.team = {
             name: ''
@@ -35,8 +37,9 @@ angular.module('spawncampingShameApp')
           $scope.refreshTeams();
         },function(err){
           console.log('Error :(');
-        })
-      }
+          console.log(err);
+        });
+      };
 
       $scope.deleteTeam = function(id){
         console.log(id);
@@ -44,10 +47,12 @@ angular.module('spawncampingShameApp')
           function(data){
             console.log('Deleted!');
             $scope.refreshTeams();
+            console.log(data);
           },
           function(err){
             console.log('Error');
+            console.log(err);
           }
         );
-      }
+      };
   }]);

@@ -3,6 +3,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@font-face {
+    font-family: 'CSGO';
+    src: url(./fonts/cs_regular.ttf);
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -12,10 +17,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
-
+.go-font{
+  font-family: 'CSGO' !important;
+}
+.navbar-counter{
+  background: #212121;
+  text-transform: uppercase;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

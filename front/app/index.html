@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -17,19 +17,35 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="spawncampingShameApp">
+</head>
+<body ng-app="spawncampingShameApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div ui-view></div>
-    </div>
+      <!-- Add your site or application content here -->
+      <div class="navbar navbar-counter">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand text-warning go-font" href="" ui-sref="landing">Spawncamping Shame</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <!-- <ul class="nav navbar-nav navbar-right">
+          <li><a href="" ui-sref="landing">Index</a></li>
+      </li> -->
+  </ul>
+</div>
+</div>
+<div class="container">
+  <div ui-view></div>
+</div>
 
 
-    <!-- build:js(.) scripts/oldieshim.js -->
+<!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
@@ -63,15 +79,15 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/landing.js"></script>
-        <script src="scripts/controllers/primary.js"></script>
-        <script src="scripts/controllers/teams.js"></script>
-        <script src="scripts/services/teamresource.js"></script>        
-        <script src="scripts/services/primaryresource.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/landing.js"></script>
+    <script src="scripts/controllers/primary.js"></script>
+    <script src="scripts/controllers/teams.js"></script>
+    <script src="scripts/services/teamresource.js"></script>        
+    <script src="scripts/services/primaryresource.js"></script>
+    <!-- endbuild -->
     <link rel="stylesheet" href="bower_components/m8tro-bootstrap/dist/css/m8tro.min.css" />
 </body>
 </html>
