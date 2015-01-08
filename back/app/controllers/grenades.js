@@ -106,7 +106,7 @@ module.exports = function(app) {
   };
 
 
-  app.get('/api/grenadess', api.grenadess);
+  app.get('/api/grenades', api.grenadess);
   app.get('/api/grenades/:id', api.grenades);
   app.post('/api/grenades', api.addGrenades);
   app.put('/api/grenades/:id', api.editGrenades);

@@ -1,4 +1,4 @@
-<div class="row" ng-hide="add">
+<div class="row" ng-hide="add || edit">
   <div class="col-xs-12">
     <h1 class="text-warning text-center">Primaries</h1>
     <ul class="list-unstyled">
@@ -90,5 +90,57 @@
     		</div>
     		<button class="btn btn-success btn-block pull-right" type="button" ng-click="savePrimary()">Add</button>
     	</form>
+    </div>
+</div>
+<div class="row" ng-show="edit">
+    <div class="col-xs-12">
+        <h1 class="text-warning text-center">Edit {{primaryToEdit.name}}</h1>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="primaryToEdit.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="primaryToEdit.special" placeholder="Special">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="primaryToEdit.desc" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="primaryToEdit.type" placeholder="Type">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.cost" placeholder="Cost">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.award" placeholder="Award">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.accuracy" placeholder="Accuracy">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.movement" placeholder="Movement">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.armor" placeholder="Armor">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.ammo" placeholder="Ammo">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.magazine" placeholder="Magazine">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.range" placeholder="Range">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" ng-model="primaryToEdit.dmg" placeholder="Damage">
+            </div>
+            <div class="form-group">
+                <select multiple class="form-control" ng-model="primaryToEdit.team" ng-options="team.name for team in teams track by team._id">
+                    <option value="">Team</option>
+                </select>
+            </div>
+            <button class="btn btn-success btn-block pull-right" type="button" data="primaryToEdit._id" ng-click="updatePrimary(primaryToEdit._id)">Update</button>
+        </form>
     </div>
 </div>

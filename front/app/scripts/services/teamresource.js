@@ -10,11 +10,10 @@ angular.module('spawncampingShameApp')
           	},
           	get:{
           		params: {id: '@id'},
-          		method:'GET',
+          		method:'GET'
             },	
           	delete:{
           		params: {id: '@id'},
-          		url: API.teamID,
           		method: 'DELETE'
           	}
           });

@@ -138,9 +138,9 @@ module.exports = function(app) {
   };
 
 
-  app.get('/api/secondarys', api.secondarys);
-  app.get('/api/secondary/:id', api.secondary);
-  app.post('/api/secondary', api.addSecondary);
-  app.put('/api/secondary/:id', api.editSecondary);
-  app.delete('/api/secondary/:id', api.deleteSecondary);
+  app.get('/api/secondaries', api.secondarys);
+  app.get('/api/secondaries/:id', api.secondary);
+  app.post('/api/secondaries', api.addSecondary);
+  app.put('/api/secondaries/:id', api.editSecondary);
+  app.delete('/api/secondaries/:id', api.deleteSecondary);
 };

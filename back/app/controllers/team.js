@@ -95,8 +95,8 @@ module.exports = function(app) {
 
 
   app.get('/api/teams', api.teams);
-  app.get('/api/team/:id', api.team);
-  app.post('/api/team', api.addTeam);
-  app.put('/api/team/:id', api.editTeam);
-  app.delete('/api/team/:id', api.deleteTeam);
+  app.get('/api/teams/:id', api.team);
+  app.post('/api/teams', api.addTeam);
+  app.put('/api/teams/:id', api.editTeam);
+  app.delete('/api/teams/:id', api.deleteTeam);
 };

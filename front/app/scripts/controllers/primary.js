@@ -10,6 +10,8 @@
 angular.module('spawncampingShameApp')
   	.controller('PrimaryCtrl', [ '$scope', 'PrimaryResource', 'TeamResource', function($scope, Primary, Team){  	
   		$scope.add = false;
+      $scope.edit = false;
+      $scope.primaryToEdit = {};
 
       $scope.refreshPrimaries = function(){
         Primary.query(
@@ -17,7 +19,8 @@ angular.module('spawncampingShameApp')
             $scope.primaries = data.primarys;
           }
         );
-      }
+      };
+
        $scope.refreshTeams = function(){
           Team.query(
           function(data){
@@ -69,6 +72,37 @@ angular.module('spawncampingShameApp')
           },
           function(err){
             console.log('Error');
+            console.log(err);
+          }
+        );
+      };
+
+      $scope.editPrimary = function(id){
+        $scope.edit = true;
+        Primary.get({id: id},
+          function(data){
+            $scope.primaryToEdit = data.primary;
+            console.log(data);
+          },
+          function(err){
+            console.log('Error');
+            console.log(err);
+          }
+        );
+      };
+
+      $scope.updatePrimary = function(id){
+        $scope.primary = $scope.primaryToEdit;
+
+        var primary = new Primary($scope);
+        
+        primary.$update({id: id},
+          function(data){
+            console.log('SUCCESS');
+            $scope.refreshPrimaries();
+            $scope.edit = false;
+          },
+          function(err){
             console.log(err);
           }
         );

@@ -110,7 +110,7 @@ module.exports = function(app) {
   };
 
 
-  app.get('/api/equipments', api.equipments);
+  app.get('/api/equipment', api.equipments);
   app.get('/api/equipment/:id', api.equipment);
   app.post('/api/equipment', api.addEquipment);
   app.put('/api/equipment/:id', api.editEquipment);

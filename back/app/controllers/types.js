@@ -94,7 +94,7 @@ module.exports = function(app) {
   };
 
 
-  app.get('/api/typess', api.typess);
+  app.get('/api/types', api.typess);
   app.get('/api/types/:id', api.types);
   app.post('/api/types', api.addTypes);
   app.put('/api/types/:id', api.editTypes);

@@ -22,12 +22,10 @@ angular
             return 'http://localhost:3000'+url;
         };
         return {
-            primaries: toUrl('/api/primarys'),
-            primary: toUrl('/api/primary'),
-            primaryID: toUrl('/api/primary/:id'),
+            primaries: toUrl('/api/primaries'),
+            primary: toUrl('/api/primaries/:id'),
             teams: toUrl('/api/teams'),
-            team: toUrl('/api/team'),
-            teamID: toUrl('/api/team/:id')
+            team: toUrl('/api/teams/:id')
         };
     }()))
   	.config([ '$stateProvider', '$urlRouterProvider', '$httpProvider',

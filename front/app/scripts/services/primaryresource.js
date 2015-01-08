@@ -3,16 +3,25 @@
 angular.module('spawncampingShameApp')
   .factory('PrimaryResource', [ '$resource', 'API',
       function($resource, API){
-          return $resource(API.primary, {}, {
+          return $resource(API.primaries, {}, {
           	query: {
           		method: 'GET',
-          		url: API.primaries
           	},
+            get:{
+              method: 'GET',
+              params: {id: '@id'},
+              url: API.primary
+            },
           	delete:{
+              method: 'DELETE',
           		params: {id: '@id'},
-          		url: API.primaryID,
-          		method: 'DELETE'
-          	}
+              url: API.primary
+          	},
+            update: {
+              method: 'PUT',
+              params: {id: '@id'},
+              url: API.primary
+            }
           });
       }
 ]);

@@ -8,7 +8,7 @@ var fields = {
 	name: 		{ type: String },
 	special:	{ type: String },
 	desc: 		{ type: String },
-	type: 		{ type: String },
+	type: 		[{type: Schema.Types.ObjectId, ref: 'Types'}],
 	cost: 		{ type: Number },
 	award: 		{ type: Number },
 	firerate: 	{ type: Number },

@@ -151,9 +151,9 @@ module.exports = function(app) {
   };
 
 
-  app.get('/api/primarys', api.primarys);
-  app.get('/api/primary/:id', api.primary);
-  app.post('/api/primary', api.addPrimary);
-  app.put('/api/primary/:id', api.editPrimary);
-  app.delete('/api/primary/:id', api.deletePrimary);
+  app.get('/api/primaries', api.primarys);
+  app.get('/api/primaries/:id', api.primary);
+  app.post('/api/primaries', api.addPrimary);
+  app.put('/api/primaries/:id', api.editPrimary);
+  app.delete('/api/primaries/:id', api.deletePrimary);
 };
